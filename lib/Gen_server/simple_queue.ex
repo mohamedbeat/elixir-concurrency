@@ -1,6 +1,19 @@
 defmodule SimpleQueue do
   use GenServer
 
+  # this function is used by the supervisor to know how to start the childern process
+  # The use GenServer, use Supervisor, and use Agent macros automatically define this method for us
+  # (SimpleQueue has use GenServer, so we do not need to modify the module)
+  # def child_spec(opts) do
+  # %{
+  #   id: SimpleQueue,
+  #   start: {__MODULE__, :start_link, [opts]},
+  #   shutdown: 5_000,
+  #   restart: :permanent,
+  #   type: :worker
+  # }
+  # end
+
   ### GenServer API
 
   @doc """

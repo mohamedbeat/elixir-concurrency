@@ -14,7 +14,8 @@ defmodule Concurrency.MixProject do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      extra_applications: [:logger]
+      extra_applications: [:logger],
+      mod: {SimpleQueue.Application, []} # this line is important to tell OTP to start out application
     ]
   end
 
